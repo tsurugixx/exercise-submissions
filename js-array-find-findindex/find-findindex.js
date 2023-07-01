@@ -12,7 +12,9 @@ findUserByUsername(users, 'taco') // undefined
 */
 
 
-function findUserByUsername(usersArray, username) {}
+function findUserByUsername(usersArray, username) {
+  return usersArray.find((x) => x.username === username)
+}
 
 /*
 Write a function called `removeUser` which accepts an array of objects, each with a key of username, and a string. The function should remove the object from the array. If the object is not found, return undefined. 
@@ -27,4 +29,13 @@ removeUser(users, 'akagen') // {username: 'akagen'}
 removeUser(users, 'akagen') // undefined
 */
 
-function removeUser(usersArray, username) {}
+function removeUser(usersArray, username) {
+  searchMatch = usersArray.findIndex((x) => x.username === username)
+  console.log(searchMatch)
+  if (searchMatch !== -1){
+    return usersArray.splice(searchMatch,1)[0]
+  } 
+  else {
+    return
+}
+};
